@@ -1,0 +1,114 @@
+
+DB username:
+myUser
+
+DB password:
+myUser
+
+Christian-Ritter-von-Langheinrich-Straﬂe 7, 95448 Bayreuth
+
+label#radiusLabelValue.value
+
+use TankstellenDB
+db.createCollection("tankstelle", {safe:true});
+
+im programm: insertDresden aufrufen ;)
+
+db.Tankstellen.ensureIndex( {latLng : "2d" }, {bits : 32} )
+
+    ul#searchBar
+      li#logo
+        label LOGO
+      li#searchField
+        input#searchLocation(type='text', size='50', placeholder='Beispielstrasse 4, 01234 Beispielhausen')
+      li#searchButton
+        button#searchLocationButton(type='image', name='searchLocation')
+        
+   
+
+   
+      #searchVoiceContainer
+        button#circleSearch(type='button', name='circleSearch') Umkreissuche
+        button#routeSearch(type='button', name='routeSearch') Routensuche
+      #sortOfFuel
+        button#e10(type='button', name='e10') e10
+        button#super(type='button', name='super') Super
+        button#superPlus(type='button', name='superPlus') SuperPlus
+        button#diesel(type='button', name='diesel') Diesel
+        button#erdgas(type='button', name='erdgas') Erdgas
+      #tankstellenContainer
+        ul#positionList
+          li#posA
+            img(src='http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|0000FF|000000', alt='posA')
+            span#posAspanKey Aktueller Standort:
+            span#posAspanValue
+          li#posB
+            img(src='http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=B|0000FF|000000', alt='posB')
+            span#posBspanKey Aktueller Radius:
+            span#posBspanValue
+        ul#nav   
+
+
+   
+        
+/* ShowContainer */
+
+#showContainer{
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  display: table-row;
+}
+
+/* detailContainer */
+
+  #detailContainer{
+    width: 30%;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+    #tankstellenContainer{
+      width: 100%;
+      height: 95%;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+    #tankstellenContainer li {
+      list-style-type: none;
+    }
+
+    #searchVoiceContainer{
+      width: 100%;
+      height: 5%;
+      margin: 0px;
+      padding: 0px;
+    }
+    
+
+  
+#nav li {
+  height: 30px;
+  border-width: thin;
+  border-style: solid;
+  margin: 2px;
+}
+
+#mapContainer{
+  width: 70%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+#map_canvas{
+  height: 100%;
+  width: 100%;
+}
+
+#loadsceen{
+ display: none;
+}

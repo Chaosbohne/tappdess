@@ -1,0 +1,95 @@
+doctype
+html
+  head
+    // For mobile compatibility 
+    meta(name='viewport', content='initial-scale = 1.0,maximum-scale = 1.0')
+    title Tankstelle
+    
+    // Javascript
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.8.3.min.js')
+    script(type='text/javascript', src='http://code.jquery.com/ui/1.9.2/jquery-ui.js')
+    script(type='text/javascript', src='https://maps.google.com/maps/api/js?libraries=places,geometry&sensor=true&language=de&region=DE')
+    script(type='text/javascript', src='http://www.google.com/jsapi')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='/scripts/socketIoProvider.js')
+    script(type='text/javascript', src='/scripts/mapProvider.js')
+    script(type='text/javascript', src='/scripts/geoLocateProvider.js')
+    script(type='text/javascript', src='/scripts/distanceWidget.js')
+    script(type='text/javascript', src='/scripts/radiusWidget.js')
+    script(type='text/javascript', src='/scripts/main.js')
+    script(type='text/javascript', src='/scripts/jquery.mousewheel.min.js')
+    script(type='text/javascript', src='/scripts/jquery.jscrollpane.min.js')
+    script(type='text/javascript', src='/scripts/mwheelIntent.js')
+      
+    // Fonts and Css
+    link(rel='stylesheet', type='text/css', media='all', href='/stylesheets/jquery.jscrollpane.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    // HOME
+    #wrapper_home
+      #wrap
+        #header
+          span#logo logo
+          .form
+            form(action='#', method='post')
+              .form-location      
+                input#location(type='text', name='location')
+                button#submitLocation.header_button(name='submitLocation')
+                  span.inside_button Suchen
+          button#geoLocate.header_button(name='geoLocate')
+            span.inside_button Geo
+            
+          button#navigation.header_button(name='navigation')
+            span.inside_button Navigation
+        #home
+          #info_container
+            #sort_of_petrol_container_wrapper
+              #sort_of_petrol_container
+                button#e10.sort_of_petrol_button.button_small.active(name='e10')
+                  span.inside_petrol_container E10
+                button#e5.sort_of_petrol_button.button_medium.not_active(name='5')
+                  span.inside_petrol_container Super
+                button#super_plus.sort_of_petrol_button.button_large.not_active(name='super_plus')
+                  span.inside_petrol_container SuperPlus
+                button#diesel.sort_of_petrol_button.button_medium.not_active(name='diesel')
+                  span.inside_petrol_container Diesel
+                button#erdgas.sort_of_petrol_button.button_small.not_active(name='gas')
+                  span.inside_petrol_container Gas
+            #input_container
+              table
+                tr
+                  td.first_column
+                    img#img_position(src='/images/positionA.png', alt='Position', height='34', width='21')
+                  td.second_column
+                    input#info_location(type='text', name='info_location')
+                tr
+                  td.first_column
+                    img#img_radius(src='/images/positionB.png', alt='Position', height='34', width='21')
+                  td.second_column
+                    input#info_radius(type='text', name='info_radius')
+            #petrol_container
+              table                              
+          #map_container
+            #map_canvas
+
+    // SOCIAL
+    #wrapper_social.wrapper
+      #social.container
+      #anker_about
+      
+    // ABOUT
+    #wrapper_about.wrapper
+      #about.container
+        h1 about
+      #anker_contact
+      
+    // CONTACT
+    #wrapper_contact.wrapper
+      #contact.container
+        h1 contact
+    
+    // FOOTER
+    #wrapper_footer
+      #footer
+        h1 footer
+     
