@@ -1,7 +1,7 @@
 ﻿
 SocketIoProviderClient = function(url, port) {
-    SocketIoProviderClient.prototype.socketIoClient = io.connect(url + ':' + port);
-  //SocketIoProviderClient.prototype.socketIoClient = io.connect('http://tappdes.nodester.com:80');
+  //SocketIoProviderClient.prototype.socketIoClient = io.connect(url + ':' + port);
+  SocketIoProviderClient.prototype.socketIoClient = io.connect('http://tappdess.nodester.com:80');
   //SocketIoProviderClient.prototype.socketIoClient = new io.Socket(null, {port: 8000, rememberTransport: false}); 
   SocketIoProviderClient.prototype.markersArray = [];
   SocketIoProviderClient.prototype.data = null;
