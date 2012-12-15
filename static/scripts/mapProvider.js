@@ -149,7 +149,6 @@ MapProvider = function(mapID, input1, input2, input3, geoLocateProvider, socketI
       var i = parseFloat(input);
       console.log(i);
       if(isNaN(i)) {
-        console.log('isnan');
         $(this).val(_this.get('radius') + ' km');
       }else {
         console.log('else');

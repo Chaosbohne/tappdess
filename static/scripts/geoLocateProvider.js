@@ -79,7 +79,7 @@ GeoLocateProvider = function() {
   }
 
   GeoLocateProvider.prototype.ipLocationCodeLatLng = function (callback){
-    if(this.geocoder) {
+    if(this.geocoder  && google.loader.ClientLocation) {
       var city;
       var country;
       var latLng = new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);

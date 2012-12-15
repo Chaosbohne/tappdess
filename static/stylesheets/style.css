@@ -47,6 +47,10 @@ table {
 	border-spacing: 0;
 }
 
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
 
 
 
@@ -282,7 +286,10 @@ body {
 
 /* petrol_container */
 
-#petrol_container td {
+
+
+#petrol_container td ,
+#petrol_container tr {
   vertical-align:middle;
 }
 
@@ -290,12 +297,67 @@ body {
   margin: 10px 10px 2px 10px;
 }
 
-#petrol_container .second_column label {
-  width: 265px;
+#petrol_container .second_column{
+  width: 100px;
   float: left;
 }
 
-#petrol_container .petrol_sort {
+#petrol_container .third_column {
+  width: 140px;
+  float: left;
+  font-size: 12px;
+}
+
+#petrol_container .second_column label,
+#petrol_container .third_column label{
+  line-height: 48px;
+}
+
+#petrol_container .second_column,
+#petrol_container .third_column{
+  border-bottom: 1px solid #cccccc;   
+}
+
+#petrol_container .delete_span,
+#petrol_container .info_span,
+#petrol_container .calc_span {
+  width: 11px;  
+  background-color: transparent;
+  display: block;
+  height: 11px;
+  text-indent: -10000px;  
+  margin: 0;
+  padding: 0;
+}
+
+#petrol_container .delete_span {
+  background:url(/images/delete.png) no-repeat transparent;
+}
+
+#petrol_container .info_span {
+  background:url(/images/info.png) no-repeat transparent;
+}
+
+#petrol_container  .calc_span {
+  background:url(/images/calc2.png) no-repeat transparent;
+}
+
+
+#petrol_container button {
+  background-color: #fafafa;
+  border: 1px solid #cccccc;   
+  padding: 0;
+  margin: 0;
+  display: block;
+  vertical-align: baseline;
+}
+
+#petrol_container .info_button {
+  margin: 0 2px;
+}
+
+
+#no_petrol_station {
   font-size: 12px;
 }
 
