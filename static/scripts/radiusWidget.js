@@ -47,18 +47,13 @@
        * @private
        */
       RadiusWidget.prototype.addSizer_ = function() {
-        var pinColor = "419ff6";
-        var pinText = "B";
-        var pinTextColor = "000000"; 
-        var pinImage = new google.maps.MarkerImage('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + pinText + '|' + pinColor + '|' + pinTextColor,
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));  
+        var MarkerImage = new MarkerImageProvider();
+        var pinImageBlueB = MarkerImage.getPinImageBlueB();    
       
         this.sizer = new google.maps.Marker({
           draggable: true,
           title: 'Zum Ändern ziehen',
-          icon: pinImage
+          icon: pinImageBlueB
         });
 
         this.sizer.bindTo('map', this);

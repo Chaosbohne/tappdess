@@ -293,7 +293,8 @@ body {
   vertical-align:middle;
 }
 
-.first_column img {
+.first_column img,
+.first_column_detail img {
   margin: 10px 10px 2px 10px;
 }
 
@@ -320,7 +321,8 @@ body {
 
 #petrol_container .delete_span,
 #petrol_container .info_span,
-#petrol_container .calc_span {
+#petrol_container .calc_span,
+#petrol_container .back_span {
   width: 11px;  
   background-color: transparent;
   display: block;
@@ -339,7 +341,11 @@ body {
 }
 
 #petrol_container  .calc_span {
-  background:url(/images/calc2.png) no-repeat transparent;
+  background:url(/images/calcRight.png) no-repeat transparent;
+}
+
+#petrol_container  .back_span {
+  background:url(/images/calcLeft.png) no-repeat transparent;
 }
 
 
@@ -352,21 +358,59 @@ body {
   vertical-align: baseline;
 }
 
+
+/* DETAILTABLE */
+
+#petrol_detail .second_column_detail {
+  width: 253px;
+}
+
+
+#petrol_detail .first_column_detail,
+#petrol_detail .third_column_detail,
+#petrol_detail .fourth_column_detail  {
+  vertical-align: top;
+}
+
+#petrol_detail label {
+  display: block;
+}
+
+#petrol_detail .petrol_type {
+  font-size: 100%;
+  line-height: 48px;
+}
+
+#petrol_detail .petrol_address {
+  font-size: 80%;
+  margin: 10px 0;
+  line-height: 110%;
+}
+
+#petrol_detail .third_column_detail button,
+#petrol_detail .fourth_column_detail button{
+  margin-top: 19px;
+}
+
+
+#petrol_detail .petrol_price {
+  font-size: 90%;
+  line-height: 120%;
+}
+
+
+
 #petrol_container .info_button {
   margin: 0 2px;
 }
 
+#petrol_detail {
+  display: none;
+}
 
 #no_petrol_station {
   font-size: 12px;
 }
-
-
-
-
-
-
-
 
 
 

@@ -24,19 +24,13 @@
         
         this.set('distance', 1);
 
-        //var pinColor = "18597f";
-        var pinColor = "419ff6";
-        var pinText = "A";
-        var pinTextColor = "000000";   
-        var pinImage = new google.maps.MarkerImage('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + pinText + '|' + pinColor + '|' + pinTextColor + '|' + pinColor,
-            new google.maps.Size(21, 34),
-            new google.maps.Point(0,0),
-            new google.maps.Point(10, 34));        
+        var MarkerImage = new MarkerImageProvider();
+        var pinImageBlueA = MarkerImage.getPinImageBlueA();      
             
         this.marker = new google.maps.Marker({
           draggable: true,
           title: 'Zum Ändern ziehen',
-          icon: pinImage
+          icon: pinImageBlueA
         });
 
         // Bind the marker map property to the DistanceWidget map property

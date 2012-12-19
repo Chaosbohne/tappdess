@@ -13,6 +13,9 @@ html
     script(type='text/javascript', src='/socket.io/socket.io.js')
     script(type='text/javascript', src='/scripts/socketIoProvider.js')
     script(type='text/javascript', src='/scripts/mapProvider.js')
+    script(type='text/javascript', src='/scripts/markerImageProvider.js')
+    script(type='text/javascript', src='/scripts/markerProvider.js')
+    script(type='text/javascript', src='/scripts/markerProviderList.js')
     script(type='text/javascript', src='/scripts/geoLocateProvider.js')
     script(type='text/javascript', src='/scripts/distanceWidget.js')
     script(type='text/javascript', src='/scripts/radiusWidget.js')
@@ -68,7 +71,8 @@ html
                   td.second_column
                     input#info_radius(type='text', name='info_radius')
             #petrol_container
-              table                              
+              table#petrol_overview            
+              table#petrol_detail
           #map_container
             #map_canvas
 
