@@ -263,9 +263,6 @@ body {
   border-bottom: 1px solid #cccccc;  
 }
 
-#input_container .first_column img {
-}
-
 #img_position {
   margin: 10px 10px 2px 10px;
 }
@@ -388,6 +385,10 @@ body {
   font-size: 80%;
   margin: 10px 0;
   line-height: 110%;
+}
+
+#petrol_detail .calc_button {
+  margin-left: 2px;
 }
 
 #petrol_detail .third_column_detail button,

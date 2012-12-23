@@ -198,7 +198,7 @@ MarkerProvider = function(myMarkerData, map) {
         var steps = '';
         
         for(var i = 0; i < result.routes[0].legs[0].steps.length; i++) {
-          steps += "<tr><td class=\"first_column_route\"><label>"+ i + "." +"</label></td>"
+          steps += "<tr><td class=\"first_column_route\"><label>"+ (i+1) + "." +"</label></td>"
           +"<td class=\"second_column_route\"><label>"
           +result.routes[0].legs[0].steps[i].instructions
           +"</label></td>"

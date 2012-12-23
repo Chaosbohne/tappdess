@@ -198,6 +198,7 @@ MarkerProviderList = function(myMarkerData, map) {
              $('#directionsPanel').css({'display':'none'});
              $('#petrol_detail').css({'display':'table'});
              //$('#info_container').jScrollPane(); 
+             _this.clickRouteHandler();
              _this.clickBackHandler();
            }
          }      
@@ -213,7 +214,7 @@ MarkerProviderList = function(myMarkerData, map) {
   
     MarkerProviderList.prototype.clickRouteHandler = function() {
       var _this = this;
-      $('#petrol_container .calc_button').click(function() {
+      $('#petrol_overview .calc_button').click(function() {
         var id = $(this).closest('tr').attr('id');
          for(var i = 0; i < listOfMarkers.length; i++) {
            if(listOfMarkers[i].getID() == id) {                   
