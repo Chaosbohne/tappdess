@@ -294,7 +294,8 @@ body {
 }
 
 .first_column img,
-.first_column_detail img {
+.first_column_detail img,
+.first_column_route img {
   margin: 10px 10px 2px 10px;
 }
 
@@ -368,15 +369,17 @@ body {
 
 #petrol_detail .first_column_detail,
 #petrol_detail .third_column_detail,
-#petrol_detail .fourth_column_detail  {
+#petrol_detail .fourth_column_detail,
+#petrol_route .first_column_route  {
   vertical-align: top;
 }
 
-#petrol_detail label {
+#petrol_detail label,
+#petrol_route label {
   display: block;
 }
 
-#petrol_detail .petrol_type {
+#petrol_detail .petrol_type{
   font-size: 100%;
   line-height: 48px;
 }
@@ -392,11 +395,58 @@ body {
   margin-top: 19px;
 }
 
-
 #petrol_detail .petrol_price {
   font-size: 90%;
   line-height: 120%;
 }
+
+/* ROUTETABLE */
+
+#petrol_route .start_route,
+#petrol_route .end_route {
+  width: 269px;
+  font-size: 80%;
+}
+
+#route_steps label {
+  font-size: 85%;
+  line-height: 110%;
+} 
+
+#route_steps .second_column_route{
+  width: 250px;
+}
+
+#route_steps .second_column_route label{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-right: 5px;
+}
+
+#route_steps .first_column_route label {
+  padding: 0px 16px;
+}
+
+#route_steps .first_column_route {
+  vertical-align: middle;
+}
+
+#petrol_route .maps_copyright {
+  margin-left: 41px;
+  width: 269px;
+  font-size: 60%;
+}
+
+#directionsPanel {
+  display:block;
+  clear:both;
+}
+
+
+
+
+
+
 
 
 

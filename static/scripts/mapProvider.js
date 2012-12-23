@@ -29,6 +29,7 @@ MapProvider = function(mapID, input1, input2, input3, geoLocateProvider, socketI
         _this.initAutocomplete();
         _this.initAutocompleteHandler();
         _this.socketIoProviderClient.bindTo('map', _this);
+        _this.socketIoProviderClient.bindTo('position', _this);
         
         google.maps.event.addListener(_this.distanceWidget.marker, 'dragend', function() {
           _this.geoLocateProvider.geoLocationCodeLatLng( _this.get('position'), function(error, results) {

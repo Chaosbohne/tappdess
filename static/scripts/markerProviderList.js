@@ -2,12 +2,15 @@
 MarkerProviderList = function(myMarkerData, map) {
   var __instance;
   var listOfMarkers = new Array();
+  var start;
+ 
  
   MarkerProviderList = function MarkerProviderList() {  
       
     MarkerProviderList.prototype.deleteAllMarkersAndData = function() {
       if(listOfMarkers) {
-        for(var i = listOfMarkers.length - 1; i >= 0; i--) {  
+        for(var i = listOfMarkers.length - 1; i >= 0; i--) { 
+          listOfMarkers[i].removeDirectionsResult();        
           listOfMarkers[i].getMarker().setMap(null);
           listOfMarkers[i] = null;
           listOfMarkers.pop();
@@ -20,6 +23,10 @@ MarkerProviderList = function(myMarkerData, map) {
     MarkerProviderList.prototype.deleteAllData = function() {
       $('#petrol_overview tr').remove();
       $('#petrol_detail tr').remove();
+      $('#petrol_route div').remove();
+        for(var i = listOfMarkers.length - 1; i >= 0; i--) { 
+          listOfMarkers[i].removeDirectionsResult();        
+        }      
     }
 
     MarkerProviderList.prototype.deleteItem = function(id) {
@@ -65,7 +72,7 @@ MarkerProviderList = function(myMarkerData, map) {
       return listOfMarkers;
     }
    
-    MarkerProviderList.prototype.setData = function(myMarkerData, map) {
+    MarkerProviderList.prototype.setData = function(myMarkerData, map, startPos) {
       this.deleteAllMarkersAndData();
       for(var i = 0; i < myMarkerData.length; i++) {
         var markerProvider = new MarkerProvider(myMarkerData[i], map);
@@ -73,6 +80,7 @@ MarkerProviderList = function(myMarkerData, map) {
           listOfMarkers.push(markerProvider);
         }
       }
+      start = startPos;
       this.sortListOfMarkers();
 
     }      
@@ -101,14 +109,18 @@ MarkerProviderList = function(myMarkerData, map) {
       }
       
       $('#petrol_detail').css({'display':'none'});
+      $('#directionsPanel').css({'display':'none'});
       $('#petrol_overview').css({'display':'table'});
       
       
       $('#petrol_overview').append(table);
-      $('#info_container').jScrollPane();
+      //$('#info_container').jScrollPane();
+      $('#info_container').jScrollPane({autoReinitialise: true});
+      
       this.hoverHandler();
       this.clickDetailHander();
       this.clickDeleteHandler();
+      this.clickRouteHandler();
     }
     
     MarkerProviderList.prototype.initButtonHandler = function() {
@@ -183,7 +195,9 @@ MarkerProviderList = function(myMarkerData, map) {
              listOfMarkers[i].setIcon(pinImageYellow);  
              $('#petrol_detail').append(table);
              $('#petrol_overview').css({'display':'none'});
+             $('#directionsPanel').css({'display':'none'});
              $('#petrol_detail').css({'display':'table'});
+             //$('#info_container').jScrollPane(); 
              _this.clickBackHandler();
            }
          }      
@@ -195,6 +209,24 @@ MarkerProviderList = function(myMarkerData, map) {
       $('#petrol_container .back_button').click(function() {
         _this.showData();
       });
+    }
+  
+    MarkerProviderList.prototype.clickRouteHandler = function() {
+      var _this = this;
+      $('#petrol_container .calc_button').click(function() {
+        var id = $(this).closest('tr').attr('id');
+         for(var i = 0; i < listOfMarkers.length; i++) {
+           if(listOfMarkers[i].getID() == id) {                   
+             listOfMarkers[i].getHtmlRoute(start, function(error, result) {
+              $('#petrol_detail').css({'display':'none'});
+              $('#petrol_overview').css({'display':'none'});  
+              $('#petrol_route').append(result);
+              $('#directionsPanel').css({'display':'block'});  
+             });
+
+           }
+         } 
+      });    
     }
   
     this.initButtonHandler();  
