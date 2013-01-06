@@ -56,7 +56,7 @@ button::-moz-focus-inner {
 
 body {
   font-family: Arial, sans-serif;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 #wrapper_home {

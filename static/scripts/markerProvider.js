@@ -116,7 +116,7 @@ MarkerProvider = function(myMarkerData, map) {
   
     console.log(this.marker.station);
     var table = 
-      "<tr>"
+      "<tr id=" + this.marker.station._id + ">"
       + "<td class=\"first_column_detail\">"
       + "<img src=\"/images/yellowMarker.png\" alt=\"Petrol\" height=\"34\" width=\"21\">"
       + "</td>" 
@@ -215,7 +215,10 @@ MarkerProvider = function(myMarkerData, map) {
           +"</td><td class=\"second_column_route\"><label class=\"start_route\">"
           +start_address
           +"</label>"           
-          +"</td></tr></table>"
+          +"</td><td class=\"third_column_detail\">"
+          +"<button class=\"back_button\">"
+          +"<span class=\"back_span\">" + "</span>"
+          +"</button></td></tr></table>"
           +"<table id=\"route_steps\">"
           +steps
           +"</table>"
@@ -232,89 +235,6 @@ MarkerProvider = function(myMarkerData, map) {
          callback(null);
        }
     });
-  
-/*
-  var directionsService = new google.maps.DirectionsService();
-  this.directionsDisplay = new google.maps.DirectionsRenderer({
-    draggable: false,
-    suppressInfoWindow: true,
-    suppressMarkers: true});
-    
-  this.directionsDisplay.setMap(this.marker.getMap());
-
-    var request = {
-      origin:start,
-      destination: this.marker.position,
-      travelMode: google.maps.TravelMode.DRIVING
-    };
-    
-    _this = this;
-    
-    directionsService.route(request, function(result, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        console.log(result);
-        _this.directionsDisplay.setDirections(result);
-        //_this.directionsDisplay.setPanel(document.getElementById("directionsPanel"));
-        
-        var p = _this.directionsDisplay.getPanel();
-        //var a = p.getElementById('adp-placemark');
-
-        
-        var start_index = result.routes[0].legs[0].start_address.indexOf(', Deutschland');
-        var end_index = result.routes[0].legs[0].end_address.indexOf(', Deutschland');
-        var start_address;
-        var end_address;
-        if(start_index != -1) {
-          start_address = result.routes[0].legs[0].start_address.substring(0, start_index);
-        }else {
-          start_address = result.routes[0].legs[0].start_address;
-        }        
-        
-        if(end_index != -1) {
-          end_address = result.routes[0].legs[0].end_address.substring(0, end_index);
-        } else {
-          end_address = result.routes[0].legs[0].end_address;
-        }
-        
-        
-        var steps = '';
-        
-        for(var i = 0; i < result.routes[0].legs[0].steps.length; i++) {
-          steps += "<tr><td class=\"first_column_route\"><label>"+ i + "." +"</label></td>"
-          +"<td class=\"second_column_route\"><label>"
-          +result.routes[0].legs[0].steps[i].instructions
-          +"</label></td>"
-          +"<td><label>"
-          +result.routes[0].legs[0].steps[i].distance.text
-          +"</label></td></tr>";
-        }
-        
-        
-        var source = 
-            "<div>"
-          +"<table id=\"route_start\"><tr><td class=\"first_column_route\">" 
-          +"<img src=\"/images/positionA.png\" alt=\"Petrol\" height=\"34\" width=\"21\">"
-          +"</td><td class=\"second_column_route\"><label class=\"start_route\">"
-          +start_address
-          +"</label>"           
-          +"</td></tr></table>"
-          +"<table id=\"route_steps\">"
-          +steps
-          +"</table>"
-          +"<table id=\"route_end\"><tr><td class=\"first_column_route\">" 
-          +"<img src=\"/images/yellowMarker.png\" alt=\"Petrol\" height=\"34\" width=\"21\">"
-          +"</td><td class=\"second_column_route\"><label class=\"end_route\">"
-          +end_address
-          +"</label>"           
-          +"</td></tr></table>"
-          +"<label class=\"maps_copyright\">"+result.routes[0].copyrights+"</label>"
-          +"</div>";
-
-        
-      }
-      
-    });  
-*/
   }
   
   MarkerProvider.prototype.removeDirectionsResult = function() {
